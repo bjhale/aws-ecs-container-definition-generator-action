@@ -13,6 +13,7 @@ jobs:
         id: container
         with:
           name: Test
+          image: ubuntu:latest
 
       - run: cat ${{ steps.container.outputs.container_definition }}
 
