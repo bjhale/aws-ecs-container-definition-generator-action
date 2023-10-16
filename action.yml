@@ -4,15 +4,12 @@ inputs:
   docker_labels:
     description: "The Docker labels to add to the container"
     required: false
-    default: ''
   environment:
     description: "The environment variables to pass to a container"
     required: false
-    default: ''
   image:
     description: "The image used to start a container"
     required: false
-    default: ''
   linux_parameters:
     description: "Linux-specific modifications that are applied to the container, such as Linux kernel capabilities"
     required: false
@@ -21,19 +18,15 @@ inputs:
   log_configuration:
     description: "The log configuration specification for the container"
     required: false
-    default: ''
   mount_points:
     description: "The mount points for data volumes in your container"
     required: false
-    default: ''
   name:
     description: "The name of a container"
     required: false
-    default: ''
   port_mappings:
     description: "The list of port mappings for the container"
     required: false
-    default: ''
 outputs:
   container_definition:
     description: "The path to the file containing the container definition JSON"
