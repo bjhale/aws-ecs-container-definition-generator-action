@@ -53,7 +53,6 @@ core.setOutput('container_definition_raw', JSON.stringify(containerDefinition));
 const tempDirectory = process.env['RUNNER_TEMP'];
 const hash = crypto.createHash('sha256').update(JSON.stringify(containerDefinition)).digest('hex').substring(0,7);
 const filename = `container-definition-${hash}.json`;
-
 const filePath = `${tempDirectory}/${filename}`;
 
 fs.writeFileSync(filePath, JSON.stringify(containerDefinition, null, 2));

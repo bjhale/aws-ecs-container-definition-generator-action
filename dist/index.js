@@ -34397,7 +34397,6 @@ core_default().setOutput('container_definition_raw', JSON.stringify(containerDef
 const tempDirectory = (external_process_default()).env.RUNNER_TEMP;
 const hash = external_crypto_default().createHash('sha256').update(JSON.stringify(containerDefinition)).digest('hex').substring(0,7);
 const filename = `container-definition-${hash}.json`;
-
 const filePath = `${tempDirectory}/${filename}`;
 
 external_fs_default().writeFileSync(filePath, JSON.stringify(containerDefinition, null, 2));
