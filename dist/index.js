@@ -34105,7 +34105,7 @@ if(index_image) {
   containerDefinition.image = index_image;
 }
 
-const portMappings = core.getInput('port_mappings');
+const portMappings = core.getInput('portMappings');
 if(portMappings) {
   containerDefinition.portMappings = dist.parse(portMappings);
 }
@@ -34115,22 +34115,22 @@ if(environment) {
   containerDefinition.environment = dist.parse(environment);
 }
 
-const mountPoints = core.getInput('mount_points');
+const mountPoints = core.getInput('mountPoints');
 if(mountPoints) {
   containerDefinition.mountPoints = dist.parse(mountPoints);
 }
 
-const logConfiguration = core.getInput('log_configuration');
+const logConfiguration = core.getInput('logConfiguration');
 if(logConfiguration) {
   containerDefinition.logConfiguration = dist.parse(logConfiguration);
 }
 
-const dockerLabels = core.getInput('docker_labels');
+const dockerLabels = core.getInput('dockerLabels');
 if(dockerLabels) {
   containerDefinition.dockerLabels = dist.parse(dockerLabels);
 }
 
-const linuxParameters = core.getInput('linux_parameters');
+const linuxParameters = core.getInput('linuxParameters');
 if(linuxParameters) {
   containerDefinition.linuxParameters = dist.parse(linuxParameters);
 }

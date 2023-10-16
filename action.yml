@@ -1,7 +1,7 @@
 name: "AWS ECS Container Definition Generator Action"
 description: "Generates an AWS ECS Container Definition JSON file"
 inputs:
-  docker_labels:
+  dockerLabels:
     description: "The Docker labels to add to the container"
     required: false
   environment:
@@ -10,21 +10,21 @@ inputs:
   image:
     description: "The image used to start a container"
     required: false
-  linux_parameters:
+  linuxParameters:
     description: "Linux-specific modifications that are applied to the container, such as Linux kernel capabilities"
     required: false
     default: |
       initProcessEnabled: true
-  log_configuration:
+  logConfiguration:
     description: "The log configuration specification for the container"
     required: false
-  mount_points:
+  mountPoints:
     description: "The mount points for data volumes in your container"
     required: false
   name:
     description: "The name of a container"
     required: false
-  port_mappings:
+  portMappings:
     description: "The list of port mappings for the container"
     required: false
 outputs:

@@ -1,0 +1,123 @@
+inputs:
+  # command:
+  #   description: "The command to run in the container"
+  #   required: false
+  # cpu:
+  #   description: "The number of cpu units reserved for the container"
+  #   required: false
+  # credential_specs:
+  #   description: "The credential spec to use for the container"
+  #   required: false
+  # depends_on:
+  #   description: "The dependencies defined for container startup and shutdown"
+  #   required: false
+  # disable_networking:
+  #   description: "When this parameter is true, networking is disabled within the container"
+  #   required: false
+  # dns_search_domains:
+  #   description: "The DNS search domains for the container"
+  #   required: false
+  # dns_servers:
+  #   description: "The DNS servers for the container"
+  #   required: false
+  docker_labels:
+    description: "The Docker labels to add to the container"
+    required: false
+  # docker_security_options:
+  #   description: "The Docker security options to run the container with"
+  #   required: false
+  # entry_point:
+  #   description: "The entry point that is passed to the container"
+  #   required: false
+  environment:
+    description: "The environment variables to pass to a container"
+    required: false
+  # environment_files:
+  #   description: "The environment files to pass to a container"
+  #   required: false
+  # essential:
+  #   description: "If the essential parameter of a container is marked as true, and that container fails or stops for any reason, all other containers that are part of the task are stopped"
+  #   required: false
+  # extra_hosts:
+  #   description: "A list of hostnames and IP address mappings to append to the /etc/hosts file on the container"
+  #   required: false
+  # firelens_configuration:
+  #   description: "The FireLens configuration for the container"
+  #   required: false
+  # health_check:
+  #   description: "The health check command and associated configuration parameters for the container"
+  #   required: false
+  # hostname:
+  #   description: "The hostname to use for your container"
+  #   required: false
+  image:
+    description: "The image used to start a container"
+    required: false
+  # interactive:
+  #   description: "When this parameter is true, this allows you to deploy containerized applications that require stdin or a tty to be allocated"
+  #   required: false
+  # links:
+  #   description: "The link parameter allows containers to communicate with each other without the need for port mappings"
+  #   required: false
+  linux_parameters:
+    description: "Linux-specific modifications that are applied to the container, such as Linux kernel capabilities"
+    required: false
+    default: |
+      initProcessEnabled: true
+  log_configuration:
+    description: "The log configuration specification for the container"
+    required: false
+  # memory:
+  #   description: "The hard limit (in MiB) of memory to present to the container"
+  #   required: false
+  # memory_reservation:
+  #   description: "The soft limit (in MiB) of memory to reserve for the container"
+  #   required: false
+  mount_points:
+    description: "The mount points for data volumes in your container"
+    required: false
+  name:
+    description: "The name of a container"
+    required: false
+  port_mappings:
+    description: "The list of port mappings for the container"
+    required: false
+  # privileged:
+  #   description: "When this parameter is true, the container is given elevated privileges on the host container instance"
+  #   required: false
+  # pseudo_terminal:
+  #   description: "When this parameter is true, a TTY is allocated"
+  #   required: false
+  # readonly_root_filesystem:
+  #   description: "When this parameter is true, the container is given read-only access to its root file system"
+  #   required: false
+  # repository_credentials:
+  #   description: "The private repository authentication credentials to use"
+  #   required: false
+  # resource_requirements:
+  #   description: "The type and amount of a resource to assign to a container"
+  #   required: false
+  # secrets:
+  #   description: "The secrets to pass to the container"
+  #   required: false
+  # start_timeout:
+  #   description: "Time duration (in seconds) to wait before giving up on resolving dependencies for a container"
+  #   required: false
+  # stop_timeout:
+  #   description: "Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own"
+  #   required: false
+  # system_controls:
+  #   description: "A list of namespaced kernel parameters to set in the container"
+  #   required: false
+  # ulimits:
+  #   description: "A list of ulimits to set in the container"
+  #   required: false
+  # user:
+  #   description: "The user name to use inside the container"
+  #   required: false
+  # volumes_from:
+  #   description: "Data volumes to mount from another container"
+  #   required: false
+  # working_directory:
+  #   description: "The working directory in which to run commands inside the container"
+  #   required: false

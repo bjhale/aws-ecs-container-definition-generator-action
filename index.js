@@ -16,7 +16,7 @@ if(image) {
   containerDefinition.image = image;
 }
 
-const portMappings = core.getInput('port_mappings');
+const portMappings = core.getInput('portMappings');
 if(portMappings) {
   containerDefinition.portMappings = yaml.parse(portMappings);
 }
@@ -26,22 +26,22 @@ if(environment) {
   containerDefinition.environment = yaml.parse(environment);
 }
 
-const mountPoints = core.getInput('mount_points');
+const mountPoints = core.getInput('mountPoints');
 if(mountPoints) {
   containerDefinition.mountPoints = yaml.parse(mountPoints);
 }
 
-const logConfiguration = core.getInput('log_configuration');
+const logConfiguration = core.getInput('logConfiguration');
 if(logConfiguration) {
   containerDefinition.logConfiguration = yaml.parse(logConfiguration);
 }
 
-const dockerLabels = core.getInput('docker_labels');
+const dockerLabels = core.getInput('dockerLabels');
 if(dockerLabels) {
   containerDefinition.dockerLabels = yaml.parse(dockerLabels);
 }
 
-const linuxParameters = core.getInput('linux_parameters');
+const linuxParameters = core.getInput('linuxParameters');
 if(linuxParameters) {
   containerDefinition.linuxParameters = yaml.parse(linuxParameters);
 }
