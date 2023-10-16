@@ -10,5 +10,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: ./
+        id: container
         with:
           name: Test
+
+      - run: cat ${{ steps.container.outputs.container_definition }}
+
+      - run: echo ${{ steps.container.outputs.container_definition_raw }}

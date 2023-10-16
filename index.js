@@ -6,10 +6,10 @@ import crypto from 'crypto';
 
 let containerDefinition = {};
 
-const name = core.getInput('name');
-if(name) {
-  containerDefinition.name = name;
-}
+// const name = core.getInput('name');
+// if(name) {
+//   containerDefinition.name = name;
+// }
 
 const image = core.getInput('image');
 if(image) {

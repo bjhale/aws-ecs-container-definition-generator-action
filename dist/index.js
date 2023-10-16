@@ -34350,10 +34350,10 @@ var external_crypto_default = /*#__PURE__*/__nccwpck_require__.n(external_crypto
 
 let containerDefinition = {};
 
-const index_name = core_default().getInput('name');
-if(index_name) {
-  containerDefinition.name = index_name;
-}
+// const name = core.getInput('name');
+// if(name) {
+//   containerDefinition.name = name;
+// }
 
 const index_image = core_default().getInput('image');
 if(index_image) {
