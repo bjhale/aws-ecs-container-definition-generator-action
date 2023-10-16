@@ -5,7 +5,7 @@ inputs:
     description: "The Docker labels to add to the container"
     required: false
   environment:
-    description: "The environment variables to pass to a container"
+    description: "The environment variables to pass to a container in INI format"
     required: false
   image:
     description: "The image used to start a container"

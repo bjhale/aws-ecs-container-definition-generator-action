@@ -3,6 +3,7 @@ import process from 'process';
 import yaml from 'yaml';
 import fs from 'fs';
 import crypto from 'crypto';
+import ini from 'ini';
 
 let containerDefinition = {};
 
@@ -23,7 +24,15 @@ if(portMappings) {
 
 const environment = core.getInput('environment');
 if(environment) {
-  containerDefinition.environment = yaml.parse(environment);
+  containerDefinition.environment = [];
+  const env = ini.parse(environment);
+
+  for (const [key, value] of Object.entries(env)) {
+    containerDefinition.environment.push({
+      name: key,
+      value: value
+    });
+  }
 }
 
 const mountPoints = core.getInput('mountPoints');
