@@ -22,9 +22,10 @@ if(portMappings) {
   containerDefinition.portMappings = yaml.parse(portMappings);
 }
 
+containerDefinition.environment = [];
+
 const environment = core.getInput('environment');
 if(environment) {
-  containerDefinition.environment = [];
   const env = ini.parse(environment);
 
   for (const [key, value] of Object.entries(env)) {
@@ -33,6 +34,11 @@ if(environment) {
       value: value
     });
   }
+}
+
+const environmentYaml = core.getInput('environment_yaml');
+if(environmentYaml) {
+  containerDefinition.environment = [...containerDefinition.environment, ...yaml.parse(environmentYaml)]
 }
 
 const mountPoints = core.getInput('mountPoints');

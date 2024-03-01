@@ -30,7 +30,10 @@ inputs:
   #   description: "The entry point that is passed to the container"
   #   required: false
   environment:
-    description: "The environment variables to pass to a container"
+    description: "The environment variables to pass to a container in INI format"
+    required: false
+  environment_yaml:
+    description: "The environment variables to pass to the container in yaml format"
     required: false
   # environment_files:
   #   description: "The environment files to pass to a container"
