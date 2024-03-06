@@ -66,6 +66,11 @@ if(dependsOn) {
   containerDefinition.dependsOn = yaml.parse(dependsOn);
 }
 
+const healthCheck = core.getInput('healthCheck');
+if(healthCheck) {
+  containerDefinition.healthCheck = yaml.parse(healthCheck);
+}
+
 console.log("Container Definition: ", JSON.stringify(containerDefinition, null, 2));
 
 core.setOutput('container_definition_raw', JSON.stringify(containerDefinition));

@@ -30,6 +30,9 @@ inputs:
   dependsOn:
     description: "The dependencies defined for container startup and shutdown"
     required: false
+  healthCheck:
+    description: "The health check command and associated configuration parameters for the container"
+    required: false
 outputs:
   container_definition:
     description: "The path to the file containing the container definition JSON"

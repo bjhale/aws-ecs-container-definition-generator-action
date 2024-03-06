@@ -8,9 +8,6 @@ inputs:
   # credential_specs:
   #   description: "The credential spec to use for the container"
   #   required: false
-  # depends_on:
-  #   description: "The dependencies defined for container startup and shutdown"
-  #   required: false
   # disable_networking:
   #   description: "When this parameter is true, networking is disabled within the container"
   #   required: false
@@ -46,9 +43,6 @@ inputs:
   #   required: false
   # firelens_configuration:
   #   description: "The FireLens configuration for the container"
-  #   required: false
-  # health_check:
-  #   description: "The health check command and associated configuration parameters for the container"
   #   required: false
   # hostname:
   #   description: "The hostname to use for your container"
