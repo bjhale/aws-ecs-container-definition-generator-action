@@ -27,6 +27,9 @@ inputs:
   portMappings:
     description: "The list of port mappings for the container"
     required: false
+  dependsOn:
+    description: "The dependencies defined for container startup and shutdown"
+    required: false
 outputs:
   container_definition:
     description: "The path to the file containing the container definition JSON"

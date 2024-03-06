@@ -61,6 +61,11 @@ if(linuxParameters) {
   containerDefinition.linuxParameters = yaml.parse(linuxParameters);
 }
 
+const dependsOn = core.getInput('dependsOn');
+if(dependsOn) {
+  containerDefinition.dependsOn = yaml.parse(dependsOn);
+}
+
 console.log("Container Definition: ", JSON.stringify(containerDefinition, null, 2));
 
 core.setOutput('container_definition_raw', JSON.stringify(containerDefinition));
