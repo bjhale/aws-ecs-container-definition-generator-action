@@ -7,6 +7,11 @@ import ini from 'ini';
 
 let containerDefinition = {};
 
+const containerDefinitionRaw = core.getInput('containerDefinitionRaw');
+if(containerDefinitionRaw) {
+  containerDefinition = yaml.parse(containerDefinitionRaw);
+}
+
 const name = core.getInput('name');
 if(name) {
   containerDefinition.name = name;
@@ -17,13 +22,44 @@ if(image) {
   containerDefinition.image = image;
 }
 
+const cpu = core.getInput('cpu');
+if(cpu) {
+  containerDefinition.cpu = parseInt(cpu);
+}
+
+const memory = core.getInput('memory');
+if(memory) {
+  containerDefinition.memory = parseInt(memory);
+}
+
+const memoryReservation = core.getInput('memoryReservation');
+if(memoryReservation) {
+  containerDefinition.memoryReservation = parseInt(memoryReservation);
+}
+
+const links = core.getInput('links');
+if(links) {
+  containerDefinition.links = yaml.parse(links);
+}
+
 const portMappings = core.getInput('portMappings');
 if(portMappings) {
   containerDefinition.portMappings = yaml.parse(portMappings);
 }
 
-containerDefinition.environment = [];
+const entryPoint = core.getInput('entryPoint');
+if(entryPoint) {
+  containerDefinition.entryPoint = yaml.parse(entryPoint);
+}
 
+//Command
+const command = core.getInput('command');
+if(command) {
+  containerDefinition.command = yaml.parse(command);
+}
+
+//Environment
+containerDefinition.environment = [];
 const environment = core.getInput('environment');
 if(environment) {
   const env = ini.parse(environment);
@@ -35,7 +71,6 @@ if(environment) {
     });
   }
 }
-
 const environmentYaml = core.getInput('environment_yaml');
 if(environmentYaml) {
   containerDefinition.environment = [...containerDefinition.environment, ...yaml.parse(environmentYaml)]

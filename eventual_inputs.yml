@@ -1,10 +1,4 @@
 inputs:
-  # command:
-  #   description: "The command to run in the container"
-  #   required: false
-  # cpu:
-  #   description: "The number of cpu units reserved for the container"
-  #   required: false
   # credential_specs:
   #   description: "The credential spec to use for the container"
   #   required: false
@@ -23,9 +17,7 @@ inputs:
   # docker_security_options:
   #   description: "The Docker security options to run the container with"
   #   required: false
-  # entry_point:
-  #   description: "The entry point that is passed to the container"
-  #   required: false
+
   environment:
     description: "The environment variables to pass to a container in INI format"
     required: false
@@ -53,9 +45,7 @@ inputs:
   # interactive:
   #   description: "When this parameter is true, this allows you to deploy containerized applications that require stdin or a tty to be allocated"
   #   required: false
-  # links:
-  #   description: "The link parameter allows containers to communicate with each other without the need for port mappings"
-  #   required: false
+
   linux_parameters:
     description: "Linux-specific modifications that are applied to the container, such as Linux kernel capabilities"
     required: false
@@ -64,12 +54,6 @@ inputs:
   log_configuration:
     description: "The log configuration specification for the container"
     required: false
-  # memory:
-  #   description: "The hard limit (in MiB) of memory to present to the container"
-  #   required: false
-  # memory_reservation:
-  #   description: "The soft limit (in MiB) of memory to reserve for the container"
-  #   required: false
   mount_points:
     description: "The mount points for data volumes in your container"
     required: false

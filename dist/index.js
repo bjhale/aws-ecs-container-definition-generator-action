@@ -34383,6 +34383,11 @@ var ini = __nccwpck_require__(2291);
 
 let containerDefinition = {};
 
+const containerDefinitionRaw = core.getInput('containerDefinitionRaw');
+if(containerDefinitionRaw) {
+  containerDefinition = dist.parse(containerDefinitionRaw);
+}
+
 const index_name = core.getInput('name');
 if(index_name) {
   containerDefinition.name = index_name;
@@ -34393,13 +34398,44 @@ if(index_image) {
   containerDefinition.image = index_image;
 }
 
+const cpu = core.getInput('cpu');
+if(cpu) {
+  containerDefinition.cpu = parseInt(cpu);
+}
+
+const memory = core.getInput('memory');
+if(memory) {
+  containerDefinition.memory = parseInt(memory);
+}
+
+const memoryReservation = core.getInput('memoryReservation');
+if(memoryReservation) {
+  containerDefinition.memoryReservation = parseInt(memoryReservation);
+}
+
+const links = core.getInput('links');
+if(links) {
+  containerDefinition.links = dist.parse(links);
+}
+
 const portMappings = core.getInput('portMappings');
 if(portMappings) {
   containerDefinition.portMappings = dist.parse(portMappings);
 }
 
-containerDefinition.environment = [];
+const entryPoint = core.getInput('entryPoint');
+if(entryPoint) {
+  containerDefinition.entryPoint = dist.parse(entryPoint);
+}
 
+//Command
+const command = core.getInput('command');
+if(command) {
+  containerDefinition.command = dist.parse(command);
+}
+
+//Environment
+containerDefinition.environment = [];
 const environment = core.getInput('environment');
 if(environment) {
   const env = ini.parse(environment);
@@ -34411,7 +34447,6 @@ if(environment) {
     });
   }
 }
-
 const environmentYaml = core.getInput('environment_yaml');
 if(environmentYaml) {
   containerDefinition.environment = [...containerDefinition.environment, ...dist.parse(environmentYaml)]

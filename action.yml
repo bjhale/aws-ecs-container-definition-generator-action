@@ -1,6 +1,24 @@
 name: "AWS ECS Container Definition Generator Action"
 description: "Generates an AWS ECS Container Definition JSON file"
 inputs:
+  containerDefinitionRaw:
+    description: "The container definition YAML/JSON as a string"
+    required: false
+  command:
+    description: "The command to run in the container"
+    required: false
+  memory:
+    description: "The hard limit (in MiB) of memory to present to the container"
+    required: false
+  cpu:
+    description: "The number of cpu units reserved for the container"
+    required: false
+  memory_reservation:
+    description: "The soft limit (in MiB) of memory to reserve for the container"
+    required: false
+  links:
+    description: "The link parameter allows containers to communicate with each other without the need for port mappings"
+    required: false
   dockerLabels:
     description: "The Docker labels to add to the container"
     required: false
@@ -32,6 +50,9 @@ inputs:
     required: false
   healthCheck:
     description: "The health check command and associated configuration parameters for the container"
+    required: false
+  entryPoint:
+    description: "The entry point that is passed to the container"
     required: false
 outputs:
   container_definition:
