@@ -34407,7 +34407,7 @@ if(environment) {
   for (const [key, value] of Object.entries(env)) {
     containerDefinition.environment.push({
       name: key,
-      value: value
+      value: typeof value != "string" ? value.toString() : value
     });
   }
 }
