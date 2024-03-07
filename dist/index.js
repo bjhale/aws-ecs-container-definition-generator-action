@@ -34398,9 +34398,10 @@ if(portMappings) {
   containerDefinition.portMappings = dist.parse(portMappings);
 }
 
+containerDefinition.environment = [];
+
 const environment = core.getInput('environment');
 if(environment) {
-  containerDefinition.environment = [];
   const env = ini.parse(environment);
 
   for (const [key, value] of Object.entries(env)) {
@@ -34409,6 +34410,11 @@ if(environment) {
       value: value
     });
   }
+}
+
+const environmentYaml = core.getInput('environment_yaml');
+if(environmentYaml) {
+  containerDefinition.environment = [...containerDefinition.environment, ...dist.parse(environmentYaml)]
 }
 
 const mountPoints = core.getInput('mountPoints');
@@ -34429,6 +34435,16 @@ if(dockerLabels) {
 const linuxParameters = core.getInput('linuxParameters');
 if(linuxParameters) {
   containerDefinition.linuxParameters = dist.parse(linuxParameters);
+}
+
+const dependsOn = core.getInput('dependsOn');
+if(dependsOn) {
+  containerDefinition.dependsOn = dist.parse(dependsOn);
+}
+
+const healthCheck = core.getInput('healthCheck');
+if(healthCheck) {
+  containerDefinition.healthCheck = dist.parse(healthCheck);
 }
 
 console.log("Container Definition: ", JSON.stringify(containerDefinition, null, 2));
